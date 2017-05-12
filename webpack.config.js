@@ -8,7 +8,7 @@ module.exports = {
   entry: "./index.jsx",
   module: {
     loaders: [{
-      test: /\.jsx?$/,
+      test: /\.js.?$/,
       exclude: /(node_modules|bower_components)/,
       loader: 'babel-loader',
       query: {
