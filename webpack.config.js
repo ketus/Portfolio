@@ -18,8 +18,12 @@ module.exports = {
     }]
   },
   output: {
-    path: __dirname + "/build/",
-    filename: "client.min.js"
+    path: path.join(__dirname, "build"),
+    filename: "client.min.js",
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: true
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
