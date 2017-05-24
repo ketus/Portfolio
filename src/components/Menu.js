@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import Avatar from './Avatar';
 
-export default class Header extends Component {
+export class MainMenu extends Component {
   render() {
 
     const style = {
@@ -12,6 +12,7 @@ export default class Header extends Component {
       overflow: 'auto',
       width: '15rem'
     };
+
     const themeToggle = <Checkbox toggle defaultChecked/>;
 
     return (

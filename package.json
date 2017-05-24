@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "aphrodite": "^1.2.1",
     "babel-core": "^6.17.0",
     "babel-loader": "latest",
     "babel-plugin-add-module-exports": "^0.1.2",
@@ -15,6 +16,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "react": "^15.5.4",
     "react-dom": "latest",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "semantic-ui-react": "latest"
   },
