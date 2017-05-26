@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import { Checkbox, Menu, Popup } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 
-import Avatar from './Avatar';
-
 export class MainMenu extends Component {
   render() {
 
     const style = {
-      zIndex: '99',
-      overflow: 'auto',
-      width: '15rem'
-    };
+      // position: fixed,
+      width: 200,
+      height: "100%",
+      background: "#000",
+      boxShadow: "5px 0 35px grey"    
+  };
 
-    const themeToggle = <Checkbox toggle defaultChecked/>;
+    const themeToggle = <Checkbox toggle defaultChecked />;
 
     return (
         <Menu inverted vertical fixed="left" style={style}>
@@ -27,7 +27,6 @@ export class MainMenu extends Component {
             </Menu.Item>
 
         </Menu>
-
     )
   }
 }

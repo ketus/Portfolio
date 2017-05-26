@@ -1,26 +1,24 @@
-import {BrowserRouter as Router} from 'react-router-dom';
-import {Container, Grid} from 'semantic-ui-react';
-import React, {Component} from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Container, Grid } from 'semantic-ui-react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import Routes from './Routes';
 
 import Footer from './components/Footer';
-import {MainMenu} from './components/Menu';
+import { MainMenu } from './components/Menu';
+
+const styles = {
+  marginLeft: 250,
+  marginRight: 50
+};
 
 ReactDOM.render(
   <Router>
-      <Grid columns={2}>
-
-        <Grid.Column width={3}>
-          <MainMenu/>
-        </Grid.Column>
-
-        <Grid.Column >
-            <Routes/>
-            <Footer/>
-        </Grid.Column>
-
-      </Grid>
+    <div style={styles}>
+      <MainMenu />
+      <Routes />
+      <Footer />
+    </div>
   </Router>,
-document.getElementById('app'));
+  document.getElementById('app'));
