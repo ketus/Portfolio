@@ -1,21 +1,24 @@
 import React, {Component} from 'react';
 import {Checkbox, Menu, Popup} from 'semantic-ui-react';
 import {NavLink} from 'react-router-dom';
+import {StyleSheet, css} from "aphrodite";
+
+const styles = StyleSheet.create({
+  menu: {    
+    width: 250 + "px",
+    height: 100 + "%",
+    backgroundColor: '#000',
+    boxShadow: '5px 0 35px grey'
+  }
+});
 
 export class MainMenu extends Component {
   render() {
-    const style = {
-      // position: fixed,
-      width: 200,
-      height: '100%',
-      background: '#000',
-      boxShadow: '5px 0 35px grey',
-    };
-
     const themeToggle = <Checkbox toggle defaultChecked />;
 
     return (
-        <Menu inverted vertical fixed="left" style={style}>
+        <Menu inverted vertical fixed="left" 
+              className={css(styles.menu)}>
 
           <Menu.Item exact name='Home' as={NavLink} to="/" />
           <Menu.Item exact name='Blog' as={NavLink} to="/blog" />
@@ -29,3 +32,6 @@ export class MainMenu extends Component {
     );
   }
 }
+
+
+    

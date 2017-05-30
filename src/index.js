@@ -1,24 +1,27 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Container, Grid } from 'semantic-ui-react';
-import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
 import Routes from './Routes';
 
 import Footer from './components/Footer';
 import { MainMenu } from './components/Menu';
 
-const styles = {
-  marginLeft: 250,
-  marginRight: 50
-};
+const styles = StyleSheet.create({
+  alignedRight: {
+    marginLeft: 280,
+    marginRight: 30
+  }
+});
 
 ReactDOM.render(
   <Router>
-    <div style={styles}>
+    <div className={css(styles.alignedRight)}>
       <MainMenu />
       <Routes />
       <Footer />
     </div>
   </Router>,
-  document.getElementById('app'));
+  document.getElementById('app')
+);
