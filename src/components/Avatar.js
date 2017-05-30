@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import React, {Component} from 'react';
+import {Card, Icon, Image} from 'semantic-ui-react';
 
 export default class Avatar extends Component {
-  render(){
+  render() {
     return (
       <Card raised>
         <Image src='https://react.semantic-ui.com/assets/images/avatar/large/matthew.png' />
@@ -20,6 +20,6 @@ export default class Avatar extends Component {
           </Card.Description>
         </Card.Content>
       </Card>
-    )
+    );
   }
 };

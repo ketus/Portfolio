@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import {Table, Icon} from 'semantic-ui-react';
 
 export default class Home extends Component {
@@ -50,6 +49,6 @@ export default class Home extends Component {
         </Table.Row>
       </Table.Body>
     </Table>
-    )
+    );
   }
 }

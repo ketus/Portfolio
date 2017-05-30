@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import { Checkbox, Menu, Popup } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Checkbox, Menu, Popup} from 'semantic-ui-react';
+import {NavLink} from 'react-router-dom';
 
 export class MainMenu extends Component {
   render() {
-
     const style = {
       // position: fixed,
       width: 200,
-      height: "100%",
-      background: "#000",
-      boxShadow: "5px 0 35px grey"    
-  };
+      height: '100%',
+      background: '#000',
+      boxShadow: '5px 0 35px grey',
+    };
 
     const themeToggle = <Checkbox toggle defaultChecked />;
 
@@ -27,6 +26,6 @@ export class MainMenu extends Component {
             </Menu.Item>
 
         </Menu>
-    )
+    );
   }
 }

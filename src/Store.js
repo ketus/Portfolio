@@ -1,2 +1,3 @@
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 
+<Provider/>;

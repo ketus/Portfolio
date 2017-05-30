@@ -21,6 +21,8 @@
     "semantic-ui-react": "latest"
   },
   "devDependencies": {
+    "eslint-config-google": "^0.7.1",
+    "eslint-plugin-react": "^7.0.1",
     "prop-types": "^15.5.10",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^1.16.5"

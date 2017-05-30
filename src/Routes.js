@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
 export default class Routes extends Component {
-  render(){
+  render() {
     return (
       <Switch>
         <Route exact path="/" component={Home}/>
@@ -15,6 +15,6 @@ export default class Routes extends Component {
         <Route path="/contact" component={Contact}/>
         <Route component={NotFound}/>
       </Switch>
-    )
+    );
   }
 }
