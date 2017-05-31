@@ -2,11 +2,11 @@
 var debug = process.env.NODE_ENV !== 'production';
 var webpack = require('webpack');
 var path = require('path');
-
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
+  entry: './index.js',
   context: path.join(__dirname, 'src'),
   devtool: debug ? 'inline-sourcemap' : false,
-  entry: './index.js',
   module: {
     loaders: [{
       test: /\.js.?$/,
@@ -25,8 +25,12 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-  },
-  plugins: debug ? [] : [
+  },    
+  plugins: debug ? [
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
+  ] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
