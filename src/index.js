@@ -19,10 +19,12 @@ const styles = StyleSheet.create({
 
 ReactDOM.render(
   <Router>
-    <div className={css(styles.alignedRight)}>
+    <div>
       <MainMenu />
-      <Routes />
-      <Footer />
+      <div className={css(styles.alignedRight)}>
+        <Routes />
+        <Footer />
+      </div>
     </div>
   </Router>,
   document.getElementById('app')

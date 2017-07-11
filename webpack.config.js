@@ -28,7 +28,8 @@ module.exports = {
   },    
   plugins: debug ? [
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'index.html',
+      inject: 'body'
     })
   ] : [
     new webpack.optimize.DedupePlugin(),
