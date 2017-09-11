@@ -1,12 +1,13 @@
 /* eslint-disable */
-var debug = process.env.NODE_ENV !== 'production';
+
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports = {
+
+var config = {
   entry: './index.js',
   context: path.join(__dirname, 'src'),
-  devtool: debug ? 'inline-sourcemap' : false,
+  devtool: 'inline-sourcemap',
   module: {
     loaders: [{
       test: /\.js.?$/,
@@ -19,24 +20,36 @@ module.exports = {
     }],
   },
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'client.min.js',
     publicPath: '/',
   },
   devServer: {
     historyApiFallback: true,
   },    
-  plugins: debug ? [
+  plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: 'body'
     })
-  ] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
+  ]
+}
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       mangle: false,
       sourcemap: false,
-    }),
-  ],
-};
+    })
+  );
+
+  config.devtool = false;
+}
+
+module.exports = config;
